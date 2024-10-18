@@ -1,5 +1,3 @@
-import { useRef } from "react";
-
 export const fontFamilyClasses = [
 	'open-sans',
 	'ubuntu',
