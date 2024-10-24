@@ -41,7 +41,7 @@ export const ArticleParamsForm = ({
 
 	const rootRef = useRef<HTMLElement | null>(null);
 
-	const formSubmitHandler = (evt: FormEvent) => {
+	const handleFormSubmit = (evt: FormEvent) => {
 		evt.preventDefault();
 		setArticleState({
 			...styleState,
@@ -52,7 +52,7 @@ export const ArticleParamsForm = ({
 			fontSizeOption: styleState.fontSize,
 		});
 	};
-	const formResetHandler = (evt: FormEvent) => {
+	const handleFormReset = (evt: FormEvent) => {
 		evt.preventDefault();
 		setStyleState({
 			...styleState,
@@ -72,7 +72,7 @@ export const ArticleParamsForm = ({
 		onChange: setFormOpen,
 	});
 
-	const onClickHandler = () => {
+	const handleClick = () => {
 		setFormOpen(!isOpen);
 	};
 
@@ -84,8 +84,8 @@ export const ArticleParamsForm = ({
 				ref={rootRef}>
 				<form
 					className={styles.form}
-					onSubmit={formSubmitHandler}
-					onReset={formResetHandler}>
+					onSubmit={handleFormSubmit}
+					onReset={handleFormReset}>
 					<Text size={31} weight={800} uppercase>
 						Задайте параметры
 					</Text>
@@ -148,8 +148,8 @@ export const ArticleParamsForm = ({
 						}
 					/>
 					<div className={styles.bottomContainer}>
-						<Button title='Сбросить' type='reset' onClick={onClickHandler} />
-						<Button title='Применить' type='submit' onClick={onClickHandler} />
+						<Button title='Сбросить' type='reset' onClick={handleClick} />
+						<Button title='Применить' type='submit' onClick={handleClick} />
 					</div>
 				</form>
 			</aside>
